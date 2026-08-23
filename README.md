@@ -1,1 +1,1 @@
-# blue-sway-dotfiles
+# To use, Install sway-fx, waybar, mako, otf-nerd-fonts, and swaybg. contact me for any issues
