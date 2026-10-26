@@ -17,15 +17,18 @@ set $right l
 set $term kitty
 # application launcher
 set $menu rofi -show drun
-
+# browser
+set $browser luakit
+# ide
+set $ide eclipse
 # Window Rules
 default_border none
 #default_floating_border none
 #hide_edge_borders both
 exec_always autotiling
 focus_follows_mouse yes
-gaps inner 3
-gaps outer 5
+gaps inner 5
+gaps outer 3
 
 ### Output configuration
 #
@@ -87,6 +90,13 @@ exec_always swaybg -i ~/wallpapers/blackPaper.jpg
     # Take screenshot
     bindsym $mod+q exec grim -g "$(slurp)" ~/Pictures
 
+    # Start browser
+
+    bindsym $mod+e exec $browser
+
+    # Start IDE
+
+    bindsym $mod+a exec $ide
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -177,7 +187,7 @@ exec_always swaybg -i ~/wallpapers/blackPaper.jpg
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    # bindsym $mod+a focus parent
 #
 # Scratchpad:
 #

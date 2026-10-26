@@ -1,10 +1,9 @@
 #!/bin/bash
-#install dependencies
-# !!!!!!!!! IN DEVELOPMENT DON'T USE
+#Not vibe coded, my own shitty human code. If it fails you can just install dependencies yourself :)
 installDir=$(pwd)
 sudo pacman -S wayland sway waybar mako rofi swaybg brightnessctl nerd-fonts 
 
-	read -p "Overwrite previous config? [Y/n]" overrideInput
+read -p "Overwrite previous config? [Y/n]" overrideInput
 if [[ overrideInput != "n" || overrideInput != "N" ]]; then
 	
 	mkdir -p ~/.config/sway
@@ -15,8 +14,12 @@ if [[ overrideInput != "n" || overrideInput != "N" ]]; then
 	cp ${installDir}/config.jsonc ~/.config/waybar
 	cp ${installedDir"/style.css ~/.config/waybar
 	
-	mkdir -p /usr/local/share/fonts
-	cd /usr/local/share/fonts
 else
 	printf "Exiting"
+fi
+
+read -p "Install dependencies via pacman + yay? [Y/n]" pacmanInput
+if [[ pacmanInput != "n" || != "N"]]; then
+	sudo pacman -S waybar mako otf-nerd-fonts
+	yay -S brightnessctl swaybg
 fi
